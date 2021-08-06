@@ -137,7 +137,7 @@ OGCViewerMorph >> getTilePngWithZoom: aZoomLevel x: aXvalue y: aYvalue [
 		, aZoomLevel asString , '/' 
 		, aXvalue asString , '/'
 		, aYvalue asString , '.png'.
-	morph := [ (ZnEasy getPng: url) asMorph ] onErrorDo: [ morph position: aXvalue@aYvalue ].
+	morph := [ (ZnEasy getPng: url) asMorph ] ifError: [ morph position: aXvalue@aYvalue ].
 	^ morph
 ]
 

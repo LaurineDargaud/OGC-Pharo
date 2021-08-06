@@ -21,7 +21,7 @@ OGCViewerTest >> setUp [
 	model features: (model features do: 
 		[:aFeature | 
 			|code| 
-			code := ((Random new nextBetween: 0 and: 1) * 10) round: 0.
+			code := Random new nextInt: 10.
 			aFeature properties at: 'code' put: code])
 	
 	
